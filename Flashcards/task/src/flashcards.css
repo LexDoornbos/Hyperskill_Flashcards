@@ -1,0 +1,78 @@
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("world.png");
+    background-size: 100vw;
+    background-repeat: no-repeat;
+}
+
+h1{
+    width: fit-content;
+    padding: 10px 25px;
+    border-radius: 30px;
+    color: white;
+    background: rgba(000, 000, 555, .7);
+}
+
+.game-container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.cards-container {
+/*    background: rgba(000, 000, 555, .5);*/
+    border-radius: 30px;
+    display: flex/*grid*/;
+    width: 642px;
+    /*  ----- code voor grid-variant ------
+    grid-template-rows: 250px 250px 250px;
+    grid-template-columns: 250px 250px 250px;
+    justify-content: center;
+        -----------------------------------  */
+    /*  -----  code voor FLEX-variant  ------  */
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.cards{
+    perspective: 750px;
+}
+
+.card {
+    height: 200px;
+    width: 200px;
+    margin: 7px;
+    background: transparent;
+    border-radius: 10px;
+    font-size: 22px;
+    transition: 1s ease;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back{
+    height: 100%;
+    width: 100%;
+    padding: 50px 5px 5px 5px;
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+.front{
+    background: rgba(333, 222, 111, .9);
+}
+
+.back{
+    background: rgba(111, 222, 333, .9);
+    transform: rotateY(180deg);
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
+
